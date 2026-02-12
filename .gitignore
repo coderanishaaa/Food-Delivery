@@ -1,0 +1,15 @@
+/.idea/
+/.vscode/
+/target/
+*/target/
+/.mvn/
+*.iml
+*.log
+*.tmp
+*.DS_Store
+/node_modules/
+*/node_modules/
+/dist/
+*/dist/
+/.env
+
