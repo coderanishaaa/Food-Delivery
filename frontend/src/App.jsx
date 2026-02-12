@@ -9,6 +9,9 @@ import CustomerDashboard from './pages/CustomerDashboard';
 import RestaurantDashboard from './pages/RestaurantDashboard';
 import DeliveryDashboard from './pages/DeliveryDashboard';
 import AdminDashboard from './pages/AdminDashboard';
+import PaymentPage from './pages/PaymentPage';
+import NotificationPage from './pages/NotificationPage';
+import OrderTrackingPage from './pages/OrderTrackingPage';
 import './App.css';
 
 function AppRoutes() {
@@ -62,6 +65,33 @@ function AppRoutes() {
             element={
               <PrivateRoute allowedRoles={['ADMIN']}>
                 <AdminDashboard />
+              </PrivateRoute>
+            }
+          />
+          
+          <Route
+            path="/payment"
+            element={
+              <PrivateRoute allowedRoles={['CUSTOMER']}>
+                <PaymentPage />
+              </PrivateRoute>
+            }
+          />
+          
+          <Route
+            path="/notifications"
+            element={
+              <PrivateRoute allowedRoles={['CUSTOMER', 'RESTAURANT', 'DELIVERY']}>
+                <NotificationPage />
+              </PrivateRoute>
+            }
+          />
+          
+          <Route
+            path="/orders/track"
+            element={
+              <PrivateRoute allowedRoles={['CUSTOMER']}>
+                <OrderTrackingPage />
               </PrivateRoute>
             }
           />
